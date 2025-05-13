@@ -1,0 +1,315 @@
+/*{
+    border: 2px red solid;
+}*/
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+.controle {
+  background-color: #3a834c;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu li {
+  list-style: none;
+  margin: 0 1rem;
+}
+.menu-list a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+.menu-list a:hover {
+  color: #0e2e1a;
+  border-radius: 4px;
+  font-weight: bold;
+  background-color: #78ba6f;
+}
+.menu-list li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+/* Layout principal em grade */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Ajuste para cada seção */
+.user-status {
+  grid-column: 1; /* Primeira coluna */
+  grid-row: 1; /* Primeira linha */
+}
+
+.ponto-registros {
+  grid-column: 1; /* Primeira coluna */
+  grid-row: 2; /* Segunda linha */
+}
+
+.detalhes {
+  grid-column: 2; /* Segunda coluna */
+  grid-row: 1; /* Primeira linha */
+}
+
+.calendario-container {
+  grid-column: 2; /* Segunda coluna */
+  grid-row: 2; /* Segunda linha */
+}
+
+/* Ajustes adicionais - seções*/
+section {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/*seção perfil do usuario*/
+.user-status {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 680px;
+  margin-bottom: 1rem;
+}
+
+.user-status {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-status img {
+  width: 5rem;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.user-status h2 {
+  margin: 0;
+}
+.btn-edit{
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-edit:hover {
+  background-color: #45a049;
+}
+
+/*Seção hall dos funcionarios*/
+.ponto-registros {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 680px;
+  margin-bottom: 1rem;
+}
+
+/*Seção do banco de horas*/
+.detalhes {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 690px;
+  margin-bottom: 1rem;
+}
+.btn-visualizar{
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-visualizar:hover {
+  background-color: #45a049;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+/*Seção calendario*/
+.calendar {
+  margin: auto;
+  height: auto;
+  padding: 1rem;
+  background: #046614;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+.calendar header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.months {
+  font-weight: 600;
+  color: #fff;
+}
+.calendar nav {
+  display: flex;
+  align-items: center;
+}
+.calendar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.calendar ul li {
+  width: calc(100% / 7);
+  position: relative;
+  z-index: 2;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#prev,
+#next {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+#prev::before,
+#next::before {
+  content: "";
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  border-color: #ccc;
+}
+#next::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+#prev::before {
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+#prev:hover::before,
+#next:hover::before {
+  border-color: #30ff22;
+}
+.days {
+  font-weight: 400;
+  font-size: 1rem;
+}
+.dates li.today {
+  color: #fff;
+}
+.dates li.today::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0a7113;
+  border-radius: 50%;
+  z-index: -1;
+}
+.dates li.inactive {
+  color: #ccc;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #00723f; 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.search-box {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.sidebar-menu {
+  width: 100%;
+}
+
+.sidebar-menu a {
+  display: block;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background 0.2s ease;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+  background-color: #ffffff;
+  color: #00723f;
+  font-weight: bold;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  
+}

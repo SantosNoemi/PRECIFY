@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cntrole de Ponto</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body>
+    <header class="controle">
+        <nav class="menu">
+            <ul class="menu-list">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Agende sua Coleta</a></li>
+                <li><a href="#">Como Trabalhamos</a></li>
+                <li><a href="#">Controle</a></li>
+            </ul>
+    </header>
+
+    <main>
+        <!--planilha de relatorios-->
+        <section class="planilha">
+            <button class="btn-gerar">Gerar relatório</button>
+            <button class="btn-visualizar">Visualizar</button>
+            <h2>Noemi Santos de Oliveira</h2>
+            <p>Status: <strong>Online</strong></p>
+            <button class="btn-edit">Editar Perfil</button>
+        </section>
+
+        <!--progresso com graficos-->
+        <section class="detalhes">
+            <h3>Banco de Horas</h3>
+            <p>Horas Crédito: <strong>00:00:00</strong></p>
+            <p>Horas Débito: <strong>-00:00:00</strong></p>
+            <p>Saldo: <strong>00:00:00</strong></p>
+            <p>Próximo Vencimento: <strong>00/00/0000</strong></p>
+            <button class="btn-visualizar">Visualizar</button>
+        </section>
+
+          <!--estatisticas-->
+          <section class="ponto-registros">
+            <h3>Registros</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Status</th>
+                        <th>Início</th>
+                        <th>Fim</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+              </div>
+        </section>
+    </main>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+          </div>
+      
+          <div class="search-box">
+            <input type="text" placeholder="🔍 Search">
+          </div>
+      
+          <nav class="sidebar-menu">
+            <a href="#" class="active">RESUMO</a>
+            <a href="#">RELATÓRIO PLANILHA</a>
+            <a href="#">GRÁFICOS</a>
+            <a href="#">ESTATÍSTICAS</a>
+            <a href="#">PONTO</a>
+          </nav>
+      
+    </aside>
+    <script src="script.js"></script>
+</body>
+</html>
