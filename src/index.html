@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cntrole de Ponto</title>
+    <title>Controle de Ponto</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 
 
@@ -21,13 +21,32 @@
     </header>
 
     <main>
+ <aside class="sidebar">
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Logo">
+          </div>
+      
+          <div class="search-box">
+            <input type="text" placeholder="🔍 Search">
+          </div>
+      
+          <nav class="sidebar-menu">
+            <a href="#" class="active">RESUMO</a>
+            <a href="#">RELATÓRIO PLANILHA</a>
+            <a href="#">GRÁFICOS</a>
+            <a href="#">ESTATÍSTICAS</a>
+            <a href="#">PONTO</a>
+          </nav>
+          </aside>
+        
         <!--planilha de relatorios-->
-        <section class="planilha">
-            <button class="btn-gerar">Gerar relatório</button>
-            <button class="btn-visualizar">Visualizar</button>
+        <section class="user-status">
+            <img src="assets/img/logo.png" alt="">
             <h2>Noemi Santos de Oliveira</h2>
             <p>Status: <strong>Online</strong></p>
             <button class="btn-edit">Editar Perfil</button>
+            <button class="btn-gerar">Gerar relatório</button>
+            <button class="btn-visualizar">Visualizar</button>
         </section>
 
         <!--progresso com graficos-->
@@ -57,30 +76,7 @@
                     <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
                 </tbody>
             </table>
-        </section>
-
-              </div>
-        </section>
     </main>
-
-    <aside class="sidebar">
-        <div class="logo">
-            <img src="assets/img/logo.png" alt="Logo">
-          </div>
-      
-          <div class="search-box">
-            <input type="text" placeholder="🔍 Search">
-          </div>
-      
-          <nav class="sidebar-menu">
-            <a href="#" class="active">RESUMO</a>
-            <a href="#">RELATÓRIO PLANILHA</a>
-            <a href="#">GRÁFICOS</a>
-            <a href="#">ESTATÍSTICAS</a>
-            <a href="#">PONTO</a>
-          </nav>
-      
-    </aside>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
