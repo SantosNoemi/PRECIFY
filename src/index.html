@@ -46,7 +46,6 @@
             <p>Status: <strong>Online</strong></p>
             <button class="btn-edit">Editar Perfil</button>
             <button class="btn-gerar">Gerar relatório</button>
-            <button class="btn-visualizar">Visualizar</button>
         </section>
 
         <!--progresso com graficos-->
@@ -65,17 +64,18 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Usuário</th>
-                        <th>Status</th>
-                        <th>Início</th>
-                        <th>Fim</th>
-                        <th>Total</th>
+                        <th>ID</th>
+                        <th>Titulo</th>
+                        <th>Descrição</th>
+                        <th>Arquivo</th>
+                        <th>Data</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
                 </tbody>
             </table>
+             <button class="btn-PDF" onclick="gerarPDF()">Gerar PDF</button>
     </main>
     <script src="assets/js/script.js"></script>
 </body>
