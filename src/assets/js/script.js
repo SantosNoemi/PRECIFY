@@ -15,7 +15,7 @@ const relatorios = {
     }
   ],
 
-  relatorioPlanilha: [
+  "relatorioPlanilha" : [
     {
       id: 2,
       janela: "Relatorio Planilha",
@@ -25,50 +25,11 @@ const relatorios = {
       botaoAdicionar: "Adicioar",
       botaoVisualizar: "Visualizar",
       botaoDashboard: "Dashboard",
-      planilha: [
-        {
-          id: 3,
-          titulo: "Relatório de Coletas",
-          descrição: "Relatório mensal das coletas realizadas.",
-          arquivo: "coleta_jan2025.pdf",
-          data: "01-02-2025"
-        },
-        {
-          id: 4,
-          titulo: "Materiais Reciclados",
-          descrição: "Quantidade de materiais reciclados por tipo.",
-          arquivo: "reciclados_fev2025.pdf",
-          data: "03-03-2025"
-        },
-        {
-          id: 5,
-          titulo: "Empresas Atendidas",
-          descrição: "Lista de empresas atendidas no trimestre.",
-          arquivo: "empresas_mar2025.pdf",
-          data: "05-04-2025"
-        },
-        {
-          id: 6,
-          titulo: "Catadores Ativos",
-          descrição: "Número de catadores ativos por região.",
-          arquivo: "catadores_abr2025.pdf",
-          data: "06-05-2025"
-        },
-        {
-          id: 7,
-          titulo: "Análise Financeira",
-          descrição: "Análise de custos e lucros das operações.",
-          arquivo: "financeiro_mai2025.pdf",
-          data: "07-06-2025"
-        },
-        {
-          id: 8,
-          titulo: "Impacto Ambiental",
-          descrição: "Relatório de impacto ambiental evitado.",
-          arquivo: "impacto_jun2025.pdf",
-          data: "08-07-2025"
-        }
+
+      "novaPlanilha" : [
+        
       ]
+      
     }
   ],
 
@@ -136,14 +97,86 @@ async function gerarPDF() {
     doc.text(c.data, 130, y);
     doc.text(c.local, 160, y);
     y += 10;
-  });
+  }); 
 
   // Salva o PDF
   doc.save("relatorio_coletas.pdf");
 }
 
-
+ const planilha = relatorios.relatorioPlanilha[0].novaPlanilha;
 // Função para preencher a tabela de registros
+
+// Chama a função ao carregar a página
+document.addEventListener('DOMContentLoaded', preencherTabelaRegistros);
+
+// Função para adicionar um novo registro
+// Função global para modificar os dados
+function modificar() {
+  const input1 = document.getElementById("input1").value;
+  const input2 = document.getElementById("input2").value;
+  const input3 = document.getElementById("input3").value; 
+  const input4 = document.getElementById("input4").value;
+
+  
+  const novaPlanilha = {
+    id: 0, // Usa o próximo índice
+    titulo: input1,
+    descrição: input2,
+    arquivo: null, // ou você pode adicionar lógica para upload
+    data: input4
+  };
+
+
+  planilha.push(novaPlanilha);
+
+  console.log("Nova planilha adicionada:", novaPlanilha);
+  // Atualiza a tabela
+  atualizarTabelaPlanilha();
+}
+
+
+// Inicializa os event listeners corretamente
+function inicializarModificacoes() {
+  
+  document.getElementById("modificar").addEventListener("click", modificar);
+
+  document.getElementById("modificarPlanilha").addEventListener("click", function() {
+    document.getElementById("planilha").style.display = "block";
+    document.getElementById("modificarPlanilha").style.display = "none";
+    if (typeof modificar === "function") {
+      modificar(); // Opcional: só se quiser modificar ao clicar em "modificarPlanilha"
+    }
+  });
+}
+function atualizarTabelaPlanilha() {
+  const tbody = document.querySelector(".ponto-registros tbody"); // ou o ID correto se for outro
+  if (!tbody) {
+    console.error("Elemento tbody não encontrado!");
+    return;
+  }
+
+  // Limpa a tabela antes de atualizar
+  tbody.innerHTML = "";
+
+  const planilha = relatorios.relatorioPlanilha[0].novaPlanilha;
+
+  planilha.forEach(item => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${item.id}</td>
+      <td>${item.titulo}</td>
+      <td>${item.descrição}</td>
+      <td><a href="assets/relatorios/${item.arquivo || "sem-arquivo.pdf"}" target="_blank">${item.arquivo || "Sem Arquivo"}</a></td>
+      <td>${item.data}</td>
+    `;
+    tbody.appendChild(tr); // ✅ Adiciona <tr> à <tbody>
+  });
+}
+
+
+document.addEventListener("DOMContentLoaded", inicializarModificacoes);
+
+// Exemplo de planilha como array
 function preencherTabelaRegistros() {
   // Seleciona o tbody da tabela
   const tbody = document.querySelector('.ponto-registros tbody');
@@ -153,7 +186,11 @@ function preencherTabelaRegistros() {
   tbody.innerHTML = '';
 
   // Busca os dados da planilha
-  const planilha = relatorios.relatorioPlanilha[0].planilha;
+  if(typeof novaPlanilha === 'undefined') {
+    console.error("novaPlanilha não está definida.");
+    return;
+  }
+  const planilha = relatorios.relatorioPlanilha[0].novaPlanilha;
 
   // Cria as linhas da tabela
   planilha.forEach(item => {
@@ -169,5 +206,5 @@ function preencherTabelaRegistros() {
   });
 }
 
-// Chama a função ao carregar a página
-document.addEventListener('DOMContentLoaded', preencherTabelaRegistros);
+
+
