@@ -1,256 +1,33 @@
-
+*{
+ /* border: rgba(255, 0, 0, 0.233) solid;*/
+}
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-}
-.controle {
-  background-color: #3a834c;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-.logo {
-  width: 50px;
-  height: auto;
-  margin-right: 10px;
-}
-.menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.menu li {
-  list-style: none;
-  margin: 0 1rem;
-}
-.menu-list a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-}
-.menu-list a:hover {
-  color: #0e2e1a;
-  border-radius: 4px;
-  font-weight: bold;
-  background-color: #78ba6f;
-}
-.menu-list li {
-  display: inline-block;
-  margin: 0 1rem;
 }
 
-/* Layout principal em grade */
-main {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto auto;
-}
-
-/* Ajuste para cada seção */
-.user-status {
-  grid-column: 2; /* Primeira coluna */
-  grid-row: 1; /* Primeira linha */
-  position: relative;
-  left: -14rem;
-}
-
-.ponto-registros {
-  grid-column: 2; /* Primeira coluna */
-  grid-row: 1; /* Segunda linha */
-  position: relative;
-  right: -23rem;
-  height: 95.6%;
-}
-
-.detalhes {
-  /*banco de horas*/
-  grid-column: 2; /* Segunda coluna */
-  grid-row: 1; /* Primeira linha */
-  position: relative;
-  left: -14rem ;
-  top:15rem;
-  height: 64%;
-}
-
-
-/* Ajustes adicionais - seções*/
-section {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-/*seção perfil do usuario*/
-.user-status {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 550px;
-  max-width: 680px;
-  max-height: 200px;
-  margin-bottom: 1rem;
-}
-
-.user-status {
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-
-.user-status img {
+.icon-perfil {
   width: 5rem;
   height: auto;
   margin-right: 10px;
   border-radius: 50%;
 }
-
-.user-status h2 {
-  margin: 0;
+.Precify {
+  width: 60vw;
+  max-width: 800px;
+  height: auto;
+  filter: blur(8px);
+  z-index: -1;
+  opacity: 0.25;
 }
-.btn-edit {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.btn-edit:hover {
-  background-color: #45a049;
-}
-
-/*Seção hall dos funcionarios*/
-.ponto-registros {
-  background: white;
+.Perfil{
   padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 590px;
-  margin-bottom: 1rem;
+  margin: 0.5rem;
 }
-
-/*Seção do banco de horas*/
-.detalhes {
-  background: white;
+.PlanilhaRegistros{
   padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 550px;
-  position: relative;
+  margin: 0.5rem;
 }
-.btn-visualizar {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-  align-items: end;
-  top: 15rem;
+.BancoHoras{
+  padding: 1rem;
+  margin: 0.5rem;
 }
-
-.btn-visualizar:hover {
-  background-color: #45a049;
-}
-.btn-gerar {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-  left: 310px;
-}
-.btn-gerar:hover {
-  background-color: #45a049;
-  transition: 0.5s;
-}
-.btn-PDF {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-  align-items: end;
-  top: 10rem;
-}
-.btn-PDF:hover {
-  background-color: #45a049;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 0.5rem;
-  border-bottom: 1px solid #ccc;
-  text-align: center;
-}
-
-.sidebar {
-  width: 50%;
-  height: 45rem;
-  background-color: #00723f;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 10px;
-  position: relative;
-}
-
-.logo {
-  margin-bottom: 20px;
-}
-
-.logo img {
-  width: 100px;
-}
-
-.search-box {
-  width: 100%;
-  margin-bottom: 30px;
-}
-
-.search-box input {
-  width: 95%;
-  padding: 8px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-}
-
-.sidebar-menu {
-  width: 100%;
-}
-
-.sidebar-menu a {
-  display: block;
-  padding: 12px;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  transition: background 0.2s ease;
-}
-
-.sidebar-menu a:hover,
-.sidebar-menu a.active {
-  background-color: #ffffff;
-  color: #00723f;
-  font-weight: bold;
-}
-
-
-
-
