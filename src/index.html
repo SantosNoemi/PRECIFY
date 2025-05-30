@@ -39,7 +39,6 @@
       .logo:hover {
         transform: scale(1.05);
       }
-      
     </style>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
@@ -90,68 +89,74 @@
     </nav>
 
     <div class="container">
-      
-          <div class="Perfil col-md-auto mx-auto bg-light text-dark">
-      
-      <h2 class="text-center" ><img src="assets/img/logo.png" alt="foto de perfil" class="icon-perfil">Noemi Santos de Oliveira</h2>
-      <p class="text-center">Status: <strong>Online</strong></p>
-    <p class="text-center"><button type="button" class="btn btn-success"style="width: 200px;">Editar Perfil</button></p>
-    <p class="text-center"><button type="button" class="btn btn-success" style="width: 200px;">Gerar relatório</button></p>
-    </div>
 
-    <div class="row ">
+      <div class="Perfil col-md-auto mx-auto bg-light text-dark">
 
-    <div class="BancoHoras col col-lg-4 bg-light text-dark">
-      <h3>Banco de Horas</h3>
-      <p>Horas Crédito: <strong>00:00:00</strong></p>
-      <p>Horas Débito: <strong>-00:00:00</strong></p>
-      <p>Saldo: <strong>00:00:00</strong></p>
-      <p>Próximo Vencimento: <strong>00/00/0000</strong></p>
-      <button type="button" class="btn btn-success">Visualizar</button>
-    </div>
+        <h2 class="text-center"><img src="assets/img/logo.png" alt="foto de perfil" class="icon-perfil">Noemi Santos de
+          Oliveira</h2>
+        <p class="text-center">Status: <strong>Online</strong></p>
+        <p class="text-center"><button type="button" class="btn btn-success" style="width: 200px;">Editar
+            Perfil</button></p>
+        <p class="text-center"><button type="button" class="btn btn-success" style="width: 200px;">Gerar
+            relatório</button></p>
+      </div>
 
-    <div class="PlanilhaRegistros col bg-light text-dark ">
-      <h3 class="text-center">Registros</h3>
-      <table>
-        <thead class="text-center">
-          <tr >
-            <th style="padding: 1rem;" >ID</th>
-            <th style="padding: 1rem;">Titulo</th>
-            <th style="padding: 1rem;">Descrição</th>
-            <th style="padding: 1rem;">Arquivo</th>
-            <th style="padding: 1rem;">Data</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
-          <div class="container" id="planilha" style="display: none;">
-            <div class="row">
-              <div class="col-6">
-                <input type="text" id="input1" placeholder="Título">
-              </div>
-              <div class="col">
+      <div class="row ">
 
-                <input type="text" id="input2" placeholder="Descrição">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <input type="file" id="input3" placeholder="Arquivo">
-              </div>
-              <div class="col">
-                <input type="date" id="input4" placeholder="Data">
-              </div>
-              <button id="modificar" type="button" class="btn-planilha btn-success"> Editar Planilha</button>
-            </div>
+        <div class="BancoHoras col col-lg-4 bg-light text-dark">
+          <h3>Banco de Horas</h3>
+          <p>Horas Crédito: <strong>00:00:00</strong></p>
+          <p>Horas Débito: <strong>-00:00:00</strong></p>
+          <p>Saldo: <strong>00:00:00</strong></p>
+          <p>Próximo Vencimento: <strong>00/00/0000</strong></p>
+          <button type="button" class="btn btn-success">Visualizar</button>
+        </div>
+
+        <div class="PlanilhaRegistros col bg-light text-dark ">
+          <h3 class="text-center">Registros</h3>
+          <div id="tabelaDeRegistroDeColetas">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Titulo</th>
+                  <th>Descrição</th>
+                  <th>Arquivo</th>
+                  <th>Data</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
+                <div class="container" id="planilha" style="display: none;">
+                  <div class="row">
+                    <div class="col-6">
+                      <input type="text" id="input1" placeholder="Título">
+                    </div>
+                    <div class="col">
+
+                      <input type="text" id="input2" placeholder="Descrição">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <input type="file" id="input3" placeholder="Arquivo">
+                    </div>
+                    <div class="col">
+                      <input type="date" id="input4" placeholder="Data">
+                    </div>
+                    <button id="modificar" type="button" class="btn-planilha btn-success"> Editar Planilha</button>
+                  </div>
+                </div>
+              </tbody>
+            </table>
           </div>
-        </tbody>
-      </table>
-      <button id="modificarPlanilha" type="button" class="btn btn-success">Ver planilha</button>
-      <button type="button" class="btn btn-success" onclick="gerarPDF()">Gerar PDF</button>
-    </div>
-    </div>
-       <img src=assets/img/logo.png alt="Precify" class="Precify position-fixed top-50 start-50 translate-middle">
+          <button id="modificarPlanilha" type="button" class="btn btn-success">Ver planilha</button>
+          <button type="button" class="btn btn-success" onclick="gerarPDF()">Gerar PDF</button>
+        </div>
+      </div>
+      <img src=assets/img/logo.png alt="Precify" class="Precify position-fixed top-50 start-50 translate-middle">
       <script src="assets/js/script.js"> modificarPlanilha();</script>
 </body>
 
 </html>
+
